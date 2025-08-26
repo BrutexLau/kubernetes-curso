@@ -1,0 +1,41 @@
+# Archivos de configuración locales
+*.env
+*.secret
+*.local.yaml
+*.override.yaml
+
+# Archivos de kubeconfig
+.kube/
+kubeconfig
+*.kubeconfig
+
+# Credenciales y certificados
+*.crt
+*.key
+*.pem
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+
+# Directorios de herramientas
+.helm/
+charts/
+tmp/
+output/
+dist/
+
+# Manifests generados (por Kustomize, Helm u otros)
+*.rendered.yaml
+*.generated.yaml
+
+# Configuración específica de IDE/OS
+.idea/
+.vscode/
+*.DS_Store
+
+# Docker / container
+.docker/
+docker-compose.override.yml
+
