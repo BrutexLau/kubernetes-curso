@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat
+  labels:
+    app.kubernetes.io/name: tomcat
+    estado: "desarrollo"
+  annotations:
+    doc: "Se debe complicar en gcc"
+    adjunto: "ejemplo de anotacion"
+spec:
+  containers:
+    - name: tomcat
+      image: tomcat
