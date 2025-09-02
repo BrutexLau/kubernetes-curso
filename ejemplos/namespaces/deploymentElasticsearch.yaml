@@ -5,13 +5,16 @@ metadata:
   labels:
     tipo: "desarollo"
 spec:
-  selector: #Permite seleccionar un conjunto de objetos que cumplan las condiciones
+  selector: # Permite seleccionar un conjunto de objetos que cumplan las condiciones
     matchLabels:
       app: elastic
   replicas: 2 # Indica al controlador que ejecute 2 pods
   strategy:
     type: RollingUpdate
-  minReadySeconds: 2
+    rollingUpdate:
+      maxUnavailable: 1 # Cuántos pods como máximo pueden estar "no disponibles" durante la actualización.
+      maxSurge: 1 # Cuántos pods adicionales (por encima del número deseado) se pueden crear durante la actualización.
+  minReadySeconds: 2 # Tiempo minimo en levantar un Pod
   template: #Plantilla que define los containers
     metadata:
       labels:
